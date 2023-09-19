@@ -1,0 +1,51 @@
+{
+  "name": "kof.js",
+  "version": "0.0.0",
+  "description": "An HTTP client library",
+  "type": "module",
+  "main": "./lib/index.js",
+  "browser": {
+    "./lib/fetch/undici.js": "./lib/fetch/dom.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./lib/index.js"
+    }
+  },
+  "scripts": {
+    "prebuild": "tsc --project tsconfig.build.json",
+    "build": "rollup --config",
+    "pretest": "eslint .",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Gerhut/kof.js.git"
+  },
+  "keywords": [
+    "http",
+    "client",
+    "undici",
+    "fetch"
+  ],
+  "author": "George Cheng <Gerhut@GMail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gerhut/kof.js/issues"
+  },
+  "homepage": "https://github.com/Gerhut/kof.js#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@tsconfig/recommended": "^1.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "rollup": "^3.29.2",
+    "typescript": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "@types/node": "^18.0.0",
+    "undici": "^5.0.0"
+  }
+}
